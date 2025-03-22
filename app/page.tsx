@@ -1,20 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { MapPin, Home, Building, Building2, ArrowRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import PropertyCard from "@/components/property-card"
-import TestimonialCard from "@/components/testimonial-card"
-import { featuredProperties, testimonials } from "@/lib/data"
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  Home,
+  Building,
+  Building2,
+  ArrowRight,
+  Calendar,
+  User,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import PropertyCard from "@/components/property-card";
+import TestimonialCard from "@/components/testimonial-card";
+import { featuredProperties, testimonials } from "@/lib/data";
+import { blogPosts } from "@/lib/blog-data";
 
 export default function HomePage() {
-  const [searchType, setSearchType] = useState("buy")
+  const [searchType, setSearchType] = useState("buy");
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -23,7 +32,7 @@ export default function HomePage() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -33,7 +42,7 @@ export default function HomePage() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -51,13 +60,18 @@ export default function HomePage() {
         </div>
 
         <div className="container relative z-10 mx-auto px-4 h-full flex flex-col justify-center md:px-6">
-          <motion.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-3xl">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="max-w-3xl"
+          >
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
               Find Your Dream Property in Nigeria
             </h1>
             <p className="mt-4 text-xl text-gray-200 max-w-2xl">
-              Discover premium properties across Nigeria with Sav Real Estate, your trusted partner in finding the
-              perfect home.
+              Discover premium properties across Nigeria with Sav Real Estate,
+              your trusted partner in finding the perfect home.
             </p>
           </motion.div>
 
@@ -79,7 +93,10 @@ export default function HomePage() {
                     <label className="text-sm font-medium">Location</label>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                      <Input placeholder="City, neighborhood" className="pl-10" />
+                      <Input
+                        placeholder="City, neighborhood"
+                        className="pl-10"
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -106,7 +123,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button className="bg-blue-600 hover:bg-blue-700">Search Properties</Button>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    Search Properties
+                  </Button>
                 </div>
               </TabsContent>
               <TabsContent value="rent" className="space-y-4">
@@ -115,7 +134,10 @@ export default function HomePage() {
                     <label className="text-sm font-medium">Location</label>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                      <Input placeholder="City, neighborhood" className="pl-10" />
+                      <Input
+                        placeholder="City, neighborhood"
+                        className="pl-10"
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -141,16 +163,23 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button className="bg-blue-600 hover:bg-blue-700">Find Rentals</Button>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    Find Rentals
+                  </Button>
                 </div>
               </TabsContent>
               <TabsContent value="sell" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Property Location</label>
+                    <label className="text-sm font-medium">
+                      Property Location
+                    </label>
                     <div className="relative">
                       <MapPin className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
-                      <Input placeholder="Enter your property address" className="pl-10" />
+                      <Input
+                        placeholder="Enter your property address"
+                        className="pl-10"
+                      />
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -166,7 +195,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex justify-end">
-                  <Button className="bg-blue-600 hover:bg-blue-700">Get Property Valuation</Button>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    Get Property Valuation
+                  </Button>
                 </div>
               </TabsContent>
             </Tabs>
@@ -179,9 +210,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center mb-12">
             <Badge className="mb-4">Featured Properties</Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Discover Our Premium Listings</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Discover Our Premium Listings
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-              Explore our handpicked selection of premium properties across Nigeria's most sought-after locations.
+              Explore our handpicked selection of premium properties across
+              Nigeria's most sought-after locations.
             </p>
           </div>
 
@@ -212,9 +246,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center mb-12">
             <Badge className="mb-4">Our Services</Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Comprehensive Real Estate Solutions</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Comprehensive Real Estate Solutions
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-              From property acquisition to management, we offer end-to-end services tailored to your needs.
+              From property acquisition to management, we offer end-to-end
+              services tailored to your needs.
             </p>
           </div>
 
@@ -231,7 +268,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Property Sales</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-4">
-                Find your dream home or investment property with our expert guidance throughout the buying process.
+                Find your dream home or investment property with our expert
+                guidance throughout the buying process.
               </p>
               <Link
                 href="/services"
@@ -253,7 +291,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Property Rentals</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-4">
-                Discover premium rental properties that match your lifestyle and budget with our personalized service.
+                Discover premium rental properties that match your lifestyle and
+                budget with our personalized service.
               </p>
               <Link
                 href="/services"
@@ -275,8 +314,8 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Property Management</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-4">
-                Maximize your property's potential with our comprehensive management services for landlords and
-                investors.
+                Maximize your property's potential with our comprehensive
+                management services for landlords and investors.
               </p>
               <Link
                 href="/services"
@@ -294,9 +333,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center mb-12">
             <Badge className="mb-4">Testimonials</Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">What Our Clients Say</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              What Our Clients Say
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-              Hear from our satisfied clients about their experience working with Sav Real Estate.
+              Hear from our satisfied clients about their experience working
+              with Sav Real Estate.
             </p>
           </div>
 
@@ -318,16 +360,27 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Ready to Find Your Dream Property?</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                Ready to Find Your Dream Property?
+              </h2>
               <p className="text-blue-100 mb-6 max-w-lg">
-                Let our expert agents guide you through the process of finding the perfect property that meets all your
-                requirements.
+                Let our expert agents guide you through the process of finding
+                the perfect property that meets all your requirements.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-blue-600 hover:bg-gray-100"
+                >
                   <Link href="/contact">Contact Us Today</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-white bg-blue-800 border-white hover:bg-blue-700">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="text-white bg-blue-800 border-white hover:bg-blue-700"
+                >
                   <Link href="/properties">Browse Properties</Link>
                 </Button>
               </div>
@@ -339,7 +392,12 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="relative h-[300px] rounded-lg overflow-hidden"
             >
-              <Image src="https://cdn.pixabay.com/photo/2021/02/11/23/23/house-6006725_1280.jpg" alt="Luxury property" fill className="object-cover" />
+              <Image
+                src="https://cdn.pixabay.com/photo/2021/02/11/23/23/house-6006725_1280.jpg"
+                alt="Luxury property"
+                fill
+                className="object-cover"
+              />
             </motion.div>
           </div>
         </div>
@@ -350,91 +408,51 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center justify-center text-center mb-12">
             <Badge className="mb-4">Latest News</Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Real Estate Insights & Updates</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Real Estate Insights & Updates
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-              Stay informed with the latest trends, market analysis, and news from the Nigerian real estate market.
+              Stay informed with the latest trends, market analysis, and news
+              from the Nigerian real estate market.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
-            >
-              <div className="relative h-48">
-                <Image src="/placeholder.svg?height=400&width=600" alt="Blog post" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <span className="text-sm text-blue-600 dark:text-blue-400">Market Trends</span>
-                <h3 className="text-xl font-bold mt-2 mb-2">The Future of Lagos Real Estate Market in 2025</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">
-                  Explore the emerging trends and predictions for Lagos's dynamic real estate market in the coming year.
-                </p>
-                <Link
-                  href="/blog/lagos-real-estate-2025"
-                  className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
-                >
-                  Read More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </motion.article>
-
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
-            >
-              <div className="relative h-48">
-                <Image src="/placeholder.svg?height=400&width=600" alt="Blog post" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <span className="text-sm text-blue-600 dark:text-blue-400">Investment Tips</span>
-                <h3 className="text-xl font-bold mt-2 mb-2">Top 5 Areas for Property Investment in Abuja</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">
-                  Discover the most promising neighborhoods in Abuja for real estate investment with high ROI potential.
-                </p>
-                <Link
-                  href="/blog/abuja-investment-areas"
-                  className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
-                >
-                  Read More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </motion.article>
-
-            <motion.article
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
-            >
-              <div className="relative h-48">
-                <Image src="/placeholder.svg?height=400&width=600" alt="Blog post" fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <span className="text-sm text-blue-600 dark:text-blue-400">Buying Guide</span>
-                <h3 className="text-xl font-bold mt-2 mb-2">
-                  Essential Checklist for First-Time Home Buyers in Nigeria
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">
-                  A comprehensive guide to help first-time buyers navigate the Nigerian property market with confidence.
-                </p>
-                <Link
-                  href="/blog/first-time-buyers-guide"
-                  className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
-                >
-                  Read More <ArrowRight className="ml-1 h-4 w-4" />
-                </Link>
-              </div>
-            </motion.article>
+            {blogPosts.slice(0, 3).map((post, index) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 * index }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
+              >
+                <div className="relative h-48">
+                  <Image
+                    src={post.imageUrl}
+                    alt="Blog post"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="text-sm text-blue-600 dark:text-blue-400">
+                    {post?.category}
+                  </span>
+                  <h3 className="text-xl font-bold mt-2 mb-2">{post?.title}</h3>
+                  <p className="text-gray-500 dark:text-gray-400 mb-4">
+                    {post?.excerpt}
+                  </p>
+                  <Link
+                    href={`/blog/${post?.slug}`}
+                    className="text-blue-600 dark:text-blue-400 font-medium hover:underline inline-flex items-center"
+                  >
+                    Read More <ArrowRight className="ml-1 h-4 w-4" />
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
           </div>
-
           <div className="mt-12 text-center">
             <Button asChild variant="outline" className="gap-2">
               <Link href="/blog">
@@ -445,6 +463,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
-

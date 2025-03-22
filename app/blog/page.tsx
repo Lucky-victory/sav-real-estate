@@ -1,17 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { Search, Calendar, User, ArrowRight, Tag } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Search, Calendar, User, ArrowRight, Tag } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { blogPosts } from "@/lib/blog-data";
 
 export default function BlogPage() {
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -20,7 +21,7 @@ export default function BlogPage() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -30,80 +31,16 @@ export default function BlogPage() {
         staggerChildren: 0.2,
       },
     },
-  }
-
-  const blogPosts = [
-    {
-      id: "post1",
-      title: "The Future of Lagos Real Estate Market in 2025",
-      excerpt: "Explore the emerging trends and predictions for Lagos's dynamic real estate market in the coming year.",
-      category: "Market Trends",
-      author: "Adebayo Johnson",
-      date: "March 15, 2025",
-      imageUrl: "/placeholder.svg?height=600&width=800",
-      slug: "lagos-real-estate-2025",
-    },
-    {
-      id: "post2",
-      title: "Top 5 Areas for Property Investment in Abuja",
-      excerpt: "Discover the most promising neighborhoods in Abuja for real estate investment with high ROI potential.",
-      category: "Investment Tips",
-      author: "Ngozi Okonkwo",
-      date: "March 10, 2025",
-      imageUrl: "/placeholder.svg?height=600&width=800",
-      slug: "abuja-investment-areas",
-    },
-    {
-      id: "post3",
-      title: "Essential Checklist for First-Time Home Buyers in Nigeria",
-      excerpt: "A comprehensive guide to help first-time buyers navigate the Nigerian property market with confidence.",
-      category: "Buying Guide",
-      author: "Emeka Nwosu",
-      date: "March 5, 2025",
-      imageUrl: "/placeholder.svg?height=600&width=800",
-      slug: "first-time-buyers-guide",
-    },
-    {
-      id: "post4",
-      title: "Understanding Property Taxes and Fees in Nigeria",
-      excerpt: "A detailed breakdown of the various taxes and fees associated with property ownership in Nigeria.",
-      category: "Legal Advice",
-      author: "Fatima Ibrahim",
-      date: "February 28, 2025",
-      imageUrl: "/placeholder.svg?height=600&width=800",
-      slug: "property-taxes-nigeria",
-    },
-    {
-      id: "post5",
-      title: "How to Maximize Rental Income from Your Investment Property",
-      excerpt:
-        "Expert tips and strategies to help landlords increase their rental income while maintaining tenant satisfaction.",
-      category: "Property Management",
-      author: "Adebayo Johnson",
-      date: "February 20, 2025",
-      imageUrl: "/placeholder.svg?height=600&width=800",
-      slug: "maximize-rental-income",
-    },
-    {
-      id: "post6",
-      title: "The Impact of Infrastructure Development on Property Values",
-      excerpt: "An analysis of how major infrastructure projects are affecting property values across Nigerian cities.",
-      category: "Market Analysis",
-      author: "Ngozi Okonkwo",
-      date: "February 15, 2025",
-      imageUrl: "/placeholder.svg?height=600&width=800",
-      slug: "infrastructure-property-values",
-    },
-  ]
+  };
 
   const filteredPosts = blogPosts.filter(
     (post) =>
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.category.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+      post.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-  const categories = [...new Set(blogPosts.map((post) => post.category))]
+  const categories = [...new Set(blogPosts.map((post) => post.category))];
 
   return (
     <div className="min-h-screen">
@@ -131,7 +68,8 @@ export default function BlogPage() {
               Real Estate Insights & Updates
             </h1>
             <p className="mt-4 text-xl text-gray-200 max-w-2xl">
-              Stay informed with the latest trends, market analysis, and news from the Nigerian real estate market.
+              Stay informed with the latest trends, market analysis, and news
+              from the Nigerian real estate market.
             </p>
           </motion.div>
         </div>
@@ -187,9 +125,13 @@ export default function BlogPage() {
                           </div>
                         </div>
                         <Link href={`/blog/${post.slug}`}>
-                          <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">{post.title}</h2>
+                          <h2 className="text-xl font-bold mb-2 hover:text-blue-600 transition-colors">
+                            {post.title}
+                          </h2>
                         </Link>
-                        <p className="text-gray-500 dark:text-gray-400 mb-4">{post.excerpt}</p>
+                        <p className="text-gray-500 dark:text-gray-400 mb-4">
+                          {post.excerpt}
+                        </p>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                             <User className="h-4 w-4 mr-1" />
@@ -208,11 +150,15 @@ export default function BlogPage() {
                 </motion.div>
               ) : (
                 <div className="text-center py-12">
-                  <h3 className="text-xl font-medium mb-2">No articles found</h3>
+                  <h3 className="text-xl font-medium mb-2">
+                    No articles found
+                  </h3>
                   <p className="text-gray-500 dark:text-gray-400 mb-6">
                     Try adjusting your search criteria to find more articles.
                   </p>
-                  <Button onClick={() => setSearchTerm("")}>Clear Search</Button>
+                  <Button onClick={() => setSearchTerm("")}>
+                    Clear Search
+                  </Button>
                 </div>
               )}
             </div>
@@ -261,7 +207,9 @@ export default function BlogPage() {
                             >
                               {post.title}
                             </Link>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">{post.date}</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                              {post.date}
+                            </p>
                           </div>
                         </div>
                       ))}
@@ -271,13 +219,18 @@ export default function BlogPage() {
 
                 <Card>
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                    <h3 className="text-xl font-bold mb-4">
+                      Subscribe to Our Newsletter
+                    </h3>
                     <p className="text-gray-500 dark:text-gray-400 mb-4">
-                      Stay updated with the latest real estate news and insights.
+                      Stay updated with the latest real estate news and
+                      insights.
                     </p>
                     <form className="space-y-4">
                       <Input placeholder="Your email address" type="email" />
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700">Subscribe</Button>
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                        Subscribe
+                      </Button>
                     </form>
                   </CardContent>
                 </Card>
@@ -291,17 +244,23 @@ export default function BlogPage() {
       <section className="py-16 bg-blue-600 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Have Questions About Real Estate?</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+              Have Questions About Real Estate?
+            </h2>
             <p className="text-blue-100 mb-8 text-lg">
-              Our team of experts is ready to provide personalized advice and guidance.
+              Our team of experts is ready to provide personalized advice and
+              guidance.
             </p>
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100"
+            >
               <Link href="/contact">Contact Our Experts</Link>
             </Button>
           </div>
         </div>
       </section>
     </div>
-  )
+  );
 }
-
