@@ -120,8 +120,9 @@ const Navbar = () => {
                 <DropdownMenuItem>Hausa</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu> */}
-            <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
-              Contact Agent
+
+            <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
+              <Link href={"/contact"}>Contact Agent</Link>
             </Button>
           </div>
 

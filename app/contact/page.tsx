@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { toast } from "@/hooks/use-toast"
+import { useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { toast } from "@/hooks/use-toast";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -20,34 +20,37 @@ export default function ContactPage() {
     phone: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message Sent",
-        description: "Thank you for contacting us. We'll get back to you shortly.",
-      })
+        description:
+          "Thank you for contacting us. We'll get back to you shortly.",
+      });
       setFormData({
         name: "",
         email: "",
         phone: "",
         subject: "",
         message: "",
-      })
-      setIsSubmitting(false)
-    }, 1500)
-  }
+      });
+      setIsSubmitting(false);
+    }, 1500);
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -56,14 +59,20 @@ export default function ContactPage() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[40vh] min-h-[300px] w-full">
         <div className="absolute inset-0">
-          <Image src="https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg" alt="Contact Us" fill priority className="object-cover" />
+          <Image
+            src="https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg"
+            alt="Contact Us"
+            fill
+            priority
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-900/40" />
         </div>
 
@@ -74,9 +83,12 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">Contact Us</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+              Contact Us
+            </h1>
             <p className="mt-4 text-xl text-gray-200 max-w-2xl">
-              Get in touch with our team for any inquiries or to schedule a consultation.
+              Get in touch with our team for any inquiries or to schedule a
+              consultation.
             </p>
           </motion.div>
         </div>
@@ -94,10 +106,12 @@ export default function ContactPage() {
               className="lg:col-span-1"
             >
               <Badge className="mb-4">Get In Touch</Badge>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Contact Information</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+                Contact Information
+              </h2>
               <p className="text-gray-500 dark:text-gray-400 mb-8">
-                Feel free to reach out to us with any questions or inquiries. Our team is ready to assist you with all
-                your real estate needs.
+                Feel free to reach out to us with any questions or inquiries.
+                Our team is ready to assist you with all your real estate needs.
               </p>
 
               <div className="space-y-6">
@@ -105,7 +119,9 @@ export default function ContactPage() {
                   <MapPin className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Head Office</h3>
-                    <p className="text-gray-500 dark:text-gray-400">123 Victoria Island, Lagos, Nigeria</p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      123 Victoria Island, Lagos, Nigeria
+                    </p>
                   </div>
                 </div>
 
@@ -113,8 +129,12 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Phone</h3>
-                    <p className="text-gray-500 dark:text-gray-400">+234 123 456 7890</p>
-                    <p className="text-gray-500 dark:text-gray-400">+234 987 654 3210</p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      +234 123 456 7890
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      +234 987 654 3210
+                    </p>
                   </div>
                 </div>
 
@@ -122,8 +142,12 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Email</h3>
-                    <p className="text-gray-500 dark:text-gray-400">info@savrealestate.com</p>
-                    <p className="text-gray-500 dark:text-gray-400">sales@savrealestate.com</p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      info@savrealestate.com
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      sales@savrealestate.com
+                    </p>
                   </div>
                 </div>
 
@@ -131,9 +155,15 @@ export default function ContactPage() {
                   <Clock className="h-5 w-5 text-blue-600 mr-3 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Working Hours</h3>
-                    <p className="text-gray-500 dark:text-gray-400">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p className="text-gray-500 dark:text-gray-400">Saturday: 9:00 AM - 3:00 PM</p>
-                    <p className="text-gray-500 dark:text-gray-400">Sunday: Closed</p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      Monday - Friday: 8:00 AM - 6:00 PM
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      Saturday: 9:00 AM - 3:00 PM
+                    </p>
+                    <p className="text-gray-500 dark:text-gray-400">
+                      Sunday: Closed
+                    </p>
                   </div>
                 </div>
               </div>
@@ -194,7 +224,10 @@ export default function ContactPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="subject" className="text-sm font-medium">
+                        <label
+                          htmlFor="subject"
+                          className="text-sm font-medium"
+                        >
                           Subject
                         </label>
                         <Input
@@ -272,9 +305,12 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge className="mb-4">Our Locations</Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Visit Our Offices</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Visit Our Offices
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-              We have offices in major cities across Nigeria to better serve you.
+              We have offices in major cities across Nigeria to better serve
+              you.
             </p>
           </div>
 
@@ -287,11 +323,18 @@ export default function ContactPage() {
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
             >
               <div className="relative h-48">
-                <Image src="https://images.unsplash.com/photo-1543414347-1c348021f279?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lagos Office" fill className="object-cover" />
+                <Image
+                  src="https://images.unsplash.com/photo-1543414347-1c348021f279?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Lagos Office"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Lagos Office</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">123 Victoria Island, Lagos, Nigeria</p>
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
+                  123 Victoria Island, Lagos, Nigeria
+                </p>
                 <Button variant="outline" className="w-full">
                   Get Directions
                 </Button>
@@ -306,11 +349,18 @@ export default function ContactPage() {
               className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md"
             >
               <div className="relative h-48">
-                <Image src="https://images.unsplash.com/photo-1733122051092-c19022119205?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Abuja Office" fill className="object-cover" />
+                <Image
+                  src="https://images.unsplash.com/photo-1733122051092-c19022119205?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Abuja Office"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Abuja Office</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">45 Maitama District, Abuja, Nigeria</p>
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
+                  45 Maitama District, Abuja, Nigeria
+                </p>
                 <Button variant="outline" className="w-full">
                   Get Directions
                 </Button>
@@ -334,7 +384,9 @@ export default function ContactPage() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">Port Harcourt Office</h3>
-                <p className="text-gray-500 dark:text-gray-400 mb-4">78 GRA Phase 2, Port Harcourt, Nigeria</p>
+                <p className="text-gray-500 dark:text-gray-400 mb-4">
+                  78 GRA Phase 2, Port Harcourt, Nigeria
+                </p>
                 <Button variant="outline" className="w-full">
                   Get Directions
                 </Button>
@@ -349,7 +401,9 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge className="mb-4">FAQs</Badge>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+              Frequently Asked Questions
+            </h2>
             <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Find answers to common questions about our services and processes.
             </p>
@@ -364,42 +418,56 @@ export default function ContactPage() {
               className="space-y-6"
             >
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">What areas do you serve?</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  What areas do you serve?
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  We primarily serve Lagos, Abuja, and Port Harcourt, but we also handle properties in other major
-                  cities across Nigeria.
+                  We primarily serve Lagos, Abuja, and Port Harcourt, but we
+                  also handle properties in other major cities across Nigeria.
                 </p>
               </div>
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">How long does it typically take to find a property?</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  How long does it typically take to find a property?
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  The timeline varies based on your specific requirements and market conditions. On average, our clients
-                  find suitable properties within 2-4 weeks.
+                  The timeline varies based on your specific requirements and
+                  market conditions. On average, our clients find suitable
+                  properties within 2-4 weeks.
                 </p>
               </div>
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">What documents do I need to buy a property?</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  What documents do I need to buy a property?
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  You'll need identification documents, proof of income, and sometimes proof of address. Our team will
-                  guide you through the specific requirements based on your situation.
+                  You'll need identification documents, proof of income, and
+                  sometimes proof of address. Our team will guide you through
+                  the specific requirements based on your situation.
                 </p>
               </div>
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">Do you handle property management for landlords?</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  Do you handle property management for landlords?
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Yes, we offer comprehensive property management services including tenant screening, rent collection,
-                  maintenance coordination, and regular property inspections.
+                  Yes, we offer comprehensive property management services
+                  including tenant screening, rent collection, maintenance
+                  coordination, and regular property inspections.
                 </p>
               </div>
 
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">What are your fees for selling a property?</h3>
+                <h3 className="text-xl font-bold mb-2">
+                  What are your fees for selling a property?
+                </h3>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Our commission structure is competitive and varies based on the property value and location. Contact
-                  us for a personalized quote based on your specific property.
+                  Our commission structure is competitive and varies based on
+                  the property value and location. Contact us for a personalized
+                  quote based on your specific property.
                 </p>
               </div>
             </motion.div>
@@ -415,13 +483,21 @@ export default function ContactPage() {
               Ready to Start Your Real Estate Journey?
             </h2>
             <p className="text-blue-100 mb-8 text-lg">
-              Our team of experts is ready to assist you with all your real estate needs.
+              Our team of experts is ready to assist you with all your real
+              estate needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100"
+              >
                 Call Us: +234 123 456 7890
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-blue-700">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white bg-transparent border-white hover:bg-blue-700"
+              >
                 Email: info@savrealestate.com
               </Button>
             </div>
@@ -429,6 +505,5 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
-

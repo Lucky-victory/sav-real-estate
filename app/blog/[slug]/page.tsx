@@ -244,9 +244,9 @@ export default function BlogPostPage() {
                 </div>
 
                 {/* Article */}
-                <article className="prose prose-lg dark:prose-invert max-w-none">
+                <article className="prose-lg dark:prose-invert max-w-none">
                   <div
-                    className="mb-8 leading-relaxed"
+                    className="mb-8 prose leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                   />
 

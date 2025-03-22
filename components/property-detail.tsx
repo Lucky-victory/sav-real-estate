@@ -543,10 +543,10 @@ const PropertyDetail = ({
             <div className="flex items-center gap-4 mb-4">
               <div className="relative h-16 w-16 rounded-full overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=200&width=200"
+                  src="https://images.unsplash.com/photo-1533108344127-a586d2b02479?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="Agent"
                   fill
-                  className="object-cover"
+                  className="object-cover h-full w-full"
                 />
               </div>
               <div>
@@ -614,7 +614,7 @@ const PropertyDetail = ({
           </Card>
 
           {/* Mortgage Calculator Teaser */}
-          <Card className="p-6 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+          {/* <Card className="p-6 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
             <div className="flex items-center gap-3 mb-4">
               <Home className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               <h3 className="font-bold text-lg">Mortgage Calculator</h3>
@@ -624,7 +624,7 @@ const PropertyDetail = ({
               property.
             </p>
             <Button className="w-full">Calculate Mortgage</Button>
-          </Card>
+          </Card> */}
         </motion.div>
       </div>
     </div>

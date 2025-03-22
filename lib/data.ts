@@ -2,7 +2,7 @@ import type { PropertyType, TestimonialType } from "./types";
 
 export const properties: PropertyType[] = [
   {
-    id: "prop1",
+    id: "550e8400-e29b-41d4-a716-446655440000",
     title: "Luxury 4 Bedroom Villa with Pool",
     description:
       "Stunning 4 bedroom villa with private pool and garden in a secure estate.",
@@ -24,7 +24,7 @@ export const properties: PropertyType[] = [
     ],
   },
   {
-    id: "prop2",
+    id: "550e8400-e29b-41d4-a716-446655440001",
     title: "Modern 3 Bedroom Apartment",
     description:
       "Beautifully designed 3 bedroom apartment with stunning city views.",
@@ -46,7 +46,7 @@ export const properties: PropertyType[] = [
     ],
   },
   {
-    id: "prop3",
+    id: "550e8400-e29b-41d4-a716-446655440002",
     title: "Spacious 2 Bedroom Apartment",
     description: "Well-maintained 2 bedroom apartment in a prime location.",
     price: 1500000,
@@ -61,7 +61,7 @@ export const properties: PropertyType[] = [
     features: ["24/7 Power", "Security", "Parking", "Air Conditioning"],
   },
   {
-    id: "prop4",
+    id: "550e8400-e29b-41d4-a716-446655440003",
     title: "Executive 5 Bedroom Mansion",
     description:
       "Luxurious 5 bedroom mansion with state-of-the-art facilities.",
@@ -77,7 +77,7 @@ export const properties: PropertyType[] = [
     features: ["Swimming Pool", "Cinema Room", "Gym", "Garden", "Smart Home"],
   },
   {
-    id: "prop5",
+    id: "550e8400-e29b-41d4-a716-446655440004",
     title: "Serviced 3 Bedroom Apartment",
     description: "Fully serviced 3 bedroom apartment with modern amenities.",
     price: 2500000,
@@ -92,7 +92,7 @@ export const properties: PropertyType[] = [
     features: ["24/7 Power", "Security", "Gym", "Swimming Pool", "Furnished"],
   },
   {
-    id: "prop6",
+    id: "550e8400-e29b-41d4-a716-446655440005",
     title: "Commercial Office Space",
     description: "Prime commercial office space in a business district.",
     price: 180000000,
@@ -116,7 +116,7 @@ export const properties: PropertyType[] = [
 
 export const featuredProperties: PropertyType[] = [
   {
-    id: "prop1",
+    id: "550e8400-e29b-41d4-a716-446655440000",
     title: "Luxury 4 Bedroom Villa with Pool",
     description:
       "Stunning 4 bedroom villa with private pool and garden in a secure estate.",
@@ -138,7 +138,7 @@ export const featuredProperties: PropertyType[] = [
     ],
   },
   {
-    id: "prop2",
+    id: "550e8400-e29b-41d4-a716-446655440001",
     title: "Modern 3 Bedroom Apartment",
     description:
       "Beautifully designed 3 bedroom apartment with stunning city views.",
@@ -160,7 +160,7 @@ export const featuredProperties: PropertyType[] = [
     ],
   },
   {
-    id: "prop3",
+    id: "550e8400-e29b-41d4-a716-446655440002",
     title: "Spacious 2 Bedroom Apartment",
     description: "Well-maintained 2 bedroom apartment in a prime location.",
     price: 1500000,
@@ -175,7 +175,7 @@ export const featuredProperties: PropertyType[] = [
     features: ["24/7 Power", "Security", "Parking", "Air Conditioning"],
   },
   {
-    id: "prop4",
+    id: "550e8400-e29b-41d4-a716-446655440003",
     title: "Executive 5 Bedroom Mansion",
     description:
       "Luxurious 5 bedroom mansion with state-of-the-art facilities.",
@@ -191,7 +191,7 @@ export const featuredProperties: PropertyType[] = [
     features: ["Swimming Pool", "Cinema Room", "Gym", "Garden", "Smart Home"],
   },
   {
-    id: "prop5",
+    id: "550e8400-e29b-41d4-a716-446655440004",
     title: "Serviced 3 Bedroom Apartment",
     description: "Fully serviced 3 bedroom apartment with modern amenities.",
     price: 2500000,
@@ -206,7 +206,7 @@ export const featuredProperties: PropertyType[] = [
     features: ["24/7 Power", "Security", "Gym", "Swimming Pool", "Furnished"],
   },
   {
-    id: "prop6",
+    id: "550e8400-e29b-41d4-a716-446655440005",
     title: "Commercial Office Space",
     description: "Prime commercial office space in a business district.",
     price: 180000000,
@@ -230,27 +230,30 @@ export const featuredProperties: PropertyType[] = [
 
 export const testimonials: TestimonialType[] = [
   {
-    id: "test1",
+    id: "550e8400-e29b-41d4-a716-446655440006",
     name: "Oluwaseun Adeyemi",
     location: "Lagos",
     rating: 5,
     text: "Sav Real Estate made finding my dream home a breeze. Their team was professional, knowledgeable, and attentive to my needs throughout the entire process.",
-    avatarUrl: "/placeholder.svg?height=200&width=200",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    id: "test2",
+    id: "550e8400-e29b-41d4-a716-446655440007",
     name: "Chioma Okafor",
     location: "Abuja",
     rating: 5,
     text: "I was impressed by the level of service provided by Sav Real Estate. They helped me find the perfect investment property and guided me through every step of the purchase.",
-    avatarUrl: "/placeholder.svg?height=200&width=200",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1602009786436-96b827675d32?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    id: "test3",
+    id: "550e8400-e29b-41d4-a716-446655440008",
     name: "Ibrahim Musa",
     location: "Port Harcourt",
     rating: 4,
     text: "Working with Sav Real Estate was a pleasure. Their property management services have made being a landlord stress-free and profitable.",
-    avatarUrl: "/placeholder.svg?height=200&width=200",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1616805765352-beedbad46b2a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
