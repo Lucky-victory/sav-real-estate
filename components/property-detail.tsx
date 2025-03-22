@@ -175,13 +175,17 @@ const PropertyDetail = ({
           <CarouselPrevious
             className="left-2"
             onClick={() => {
-              setActiveImageIndex(carouselAPI?.scrollProgress());
+              setActiveImageIndex(
+                (carouselAPI?.selectedScrollSnap() as number) - 1
+              );
             }}
           />
           <CarouselNext
             className="right-2"
             onClick={() => {
-              setActiveImageIndex(carouselAPI?.scrollProgress());
+              setActiveImageIndex(
+                (carouselAPI?.selectedScrollSnap() as number) + 1
+              );
             }}
           />
         </Carousel>
@@ -546,7 +550,7 @@ const PropertyDetail = ({
                 />
               </div>
               <div>
-                <h3 className="font-bold text-lg">John Doe</h3>
+                <h3 className="font-bold text-lg">John Adeyemi</h3>
                 <p className="text-gray-500 text-sm">
                   Senior Real Estate Agent
                 </p>
